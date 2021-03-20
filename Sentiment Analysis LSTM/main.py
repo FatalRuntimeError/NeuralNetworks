@@ -76,9 +76,7 @@ Y_test = Y_test[indeces]
 
 model = Sequential()
 model.add(Embedding(maxWordsCount, 96, input_length = max_text_len))
-model.add(LSTM(96, return_sequences=True, recurrent_dropout=0.2, recurrent_activation='sigmoid'))
-model.add(LSTM(48, return_sequences=True, recurrent_dropout=0.3, recurrent_activation='sigmoid'))
-model.add(LSTM(48, recurrent_activation='sigmoid'))
+model.add(LSTM(96, recurrent_activation='sigmoid'))
 model.add(Dense(2, activation='softmax'))
 
 model.compile(loss='binary_crossentropy', metrics=['accuracy'], optimizer=Adam(0.01))

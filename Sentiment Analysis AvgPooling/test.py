@@ -62,6 +62,7 @@ new_model = tf.keras.Sequential([
 new_model.compile(loss=losses.BinaryCrossentropy(from_logits=False), optimizer="adam", metrics=['accuracy'])
 
 new_model.evaluate(raw_test_ds)
+
 examples = [
   "You stupid",
   "I want to die",
